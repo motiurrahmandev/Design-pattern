@@ -1,16 +1,63 @@
-# React + Vite
+# 🧩 Day 03 Tasks — Compound Components Pattern
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🛠️ Tasks
 
-Currently, two official plugins are available:
+### 1. Build a Simple `Card` Component
+Create a `Card` component using the **Compound Components Pattern**.  
+Your card should include:
+- `<Card.Header>`
+- `<Card.Body>`
+- `<Card.Footer>`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Example Usage:
+```jsx
+<Card>
+  <Card.Header>Profile</Card.Header>
+  <Card.Body>This is a simple compound Card component.</Card.Body>
+  <Card.Footer>Footer Info</Card.Footer>
+</Card>
+```
 
-## React Compiler
+### 2. Add a Card.Image Component
+Extend your Card component with an optional image area.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+#### Example Usage:
+```jsx
+<Card>
+  <Card.Image src="/user.png" alt="User Avatar" />
+  <Card.Body>User profile details go here...</Card.Body>
+</Card>
+```
 
-## Expanding the ESLint configuration
+✅ Try using it in different ways and observe how clean and flexible your code becomes — no more bloated props!
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 3. Create a Tabs Component
+Build a reusable Tabs component using the same pattern.
+
+#### Example Usage:
+```jsx
+<Tabs>
+  <Tabs.List>
+    <Tabs.Tab>Home</Tabs.Tab>
+    <Tabs.Tab>Profile</Tabs.Tab>
+    <Tabs.Tab>Settings</Tabs.Tab>
+  </Tabs.List>
+
+  <Tabs.Panel>Home Content</Tabs.Panel>
+  <Tabs.Panel>Profile Content</Tabs.Panel>
+  <Tabs.Panel>Settings Content</Tabs.Panel>
+</Tabs>
+```
+
+## 🚀 Learning Outcome
+
+By completing today's tasks, you'll be able to:
+- Build flexible and composable UI components
+- Reduce props complexity and improve readability
+- Understand how modern UI libraries implement reusable patterns
+- Write cleaner, modular, and professional-quality React code
+
+## 🧩 Design Pattern Focus
+
+- **Pattern Name**: Compound Components
+- **Core Idea**: Allow parent and child components to work together implicitly using composition instead of prop drilling.
